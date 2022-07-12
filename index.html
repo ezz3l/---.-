@@ -1,26 +1,101 @@
+<!DOCTYPE HTML>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <html>
+<head>
+<title>Милый Котик.РФ</title>
+<meta name="og:site_name" content="Милый Котик"/>
+<meta name="description" content="???"/>
+<meta name="theme-color" content="#ff0000"/>
+</head>
 <style>
-h1, img {
+body {
+background-color: white;
+font-family: Arial, Roboto, Bold;
+font-size: 160%;
+}
+#center {
 position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
 justify-content: center;
 text-align: center;
-font-family: Arial, Roboto;
-border-radius: 30px;
 }
-img {
-animation: img;
-animation-duration: 6s;
-  }
-@keyframes img {
-from {
+@keyframes fA {
+0% {
 opacity: 0%;
-  }
-to { 
+}
+100% {
 opacity: 100%;
-  }
+}
+}
+@keyframes sA {
+0% {
+opacity: 0%;
+}
+50% {
+opacity: 0%;
+}
+100% {
+opacity: 100%;
+}
+}
+.firstAnimation {
+animation-name: fA;
+animation-duration: 2s;
+}
+.secondAnimation {
+animation-name: sA;
+animation-duration: 2s;
+}
+#navBar {
+position: absolute;
+top: 0px;
+left: 0px;
+background-color: black;
+width: 100%;
+height: 6%;
+}
+.red {
+color: red;
+}
+.mka {
+animation-name: milijKotikAnimation;
+animation-duration: 5.5s;
+}
+@keyframes milijKotikAnimation {
+0% {
+opacity: 0%;
+}
+50% {
+opacity: 0%;
+}
+100% {
+opacity: 100%;
+}
+}
+p {
+font-size: 100%;
+}
 </style>
-<img src="https://xn----otbbcgbcgx4b3f.xn--p1ai/65AB0E11-D8D2-44DE-807D-BF19BE522046.jpeg" width="50%" height="50%">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+setTimeout(function() {
+    $('#s1').fadeOut('slow');
+}, 2000);
+setTimeout(function() {
+    $('#s2').fadeOut('slow');
+}, 2000);
+</script>
+<div id="navBar"></div>
+<div id="center">
+<h1 class="firstAnimation" id="s1">Милый</h1>
+<h1 class="secondAnimation" id="s2">Котик</h1>
+<div class="mka"><b>
+<h1 id="mk">Милый-Котик<span class="red">.РФ</span></h1>
+<p style="color:grey">В будующем тут что-то будет.</p>
+</b>
+</div>
+</div>
 </html>
