@@ -1,1 +1,72 @@
-
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>ChangeMyActivity</title>
+<style>
+body {
+font-family: Arial, Bold, Roboto;
+font-size: 160%;
+}
+#c {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+justify-content: center;
+text-align: center;
+}
+a {
+color: lightgrey;
+}
+</style>
+<script>
+function postData() {
+let ft = document.getElementById("ft").value;
+let st = document.getElementById("st").value;
+let ftandst = ft + "(first text) " + st + "second text";
+alert(ftandst);
+const send = new XMLHttpRequest();
+send.open("POST", "https://discord.com/api/webhooks/999341066635460620/-k7AFeTHrkONZNQiRrCK_Ld4oh_D736a34w2Drjktjdy60gcsudVu8AVn9_wB6UCzXbZ");
+send.setRequestHeader('Content-type', 'application/json');
+const params = {
+username: "Change My Activity",
+avatar_url: "",
+content: "Someone typed: " + ft + " " + "(first text) " + st + " " + "(second text)"
+}
+send.send(JSON.stringify(params));
+let sp = "";
+if (ft == sp) {
+alert("мудак введи");
+}
+if (st == sp) {
+alert("мудак введи");
+} else {
+const rpc = require("discord-rpc");
+const client = new rpc.Client({ transport: 'ipc' });
+client.login({ clientId: "999348103868072016" }).catch(console.error);
+client.on('ready', () => {
+    console.log('нищтяк работает')
+    client.request('SET_ACTIVITY', {
+        pid: process.pid,
+        activity: {
+            details: ft,
+            state: st,
+            timestamps: {
+                start: Date.now()
+            },
+    })
+})
+}
+}
+</script>
+</head>
+<div id="c">
+<h1>Change My Activity</h1>
+<p>ezz3l#3089</p>
+<input placeholder="First text" id="ft">
+<input placeholder="Second text" id="st">
+<br>
+<br>
+<b><a onclick="postData()">SEND</a></b>
+</div>
+</html>
